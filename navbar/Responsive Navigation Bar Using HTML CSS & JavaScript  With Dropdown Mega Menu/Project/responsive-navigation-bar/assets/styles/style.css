@@ -1,0 +1,213 @@
+/*=============== BASE ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== GOOGLE FONTS ===============*/
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(220, 68%, 54%);
+  --first-color-lighten: hsl(220, 68%, 97%);
+  --title-color: hsl(220, 48%, 28%);
+  --text-color: hsl(220, 12%, 45%);
+  --body-color: hsl(220, 100%, 99%);
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  padding: 0 20px;
+  height: var(--header-height);
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+}
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.3s;
+}
+.nav__logo i {
+  font-size: 1.25rem;
+  margin-right: 5px;
+}
+.nav__logo:hover {
+  color: var(--first-color);
+}
+.nav__toggle {
+  position: relative;
+  width: 42px;
+  height: 42px;
+}
+.nav__toggle-menu, .nav__toggle-close {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: opacity 0.1s, transform 0.4s;
+}
+.nav__toggle-close {
+  opacity: 0;
+}
+
+.nav__menu {
+  display: flex;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+}
+.nav__list .dropdown__button {
+  display: flex;
+  align-items: center;
+}
+.nav__list .dropdown__button i {
+  margin-left: 5px;
+}
+.nav__list > li {
+  margin-left: 50px;
+}
+
+.nav {
+  position: relative;
+}
+.nav .dropdown__container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: max-content;
+  opacity: 0;
+}
+.nav .dropdown__container .dropdown__content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 20px;
+}
+.nav .dropdown__container .dropdown__group {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-right: 5rem;
+  margin-right: 3rem;
+}
+.nav .dropdown__container .dropdown__icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--first-color-lighten);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 2rem;
+}
+.nav .dropdown__container .dropdown__icon i {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+.nav .dropdown__container .dropdown__title {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+.nav .dropdown__container .dropdown_ul {
+  margin-top: 1rem;
+}
+.nav .dropdown__container .dropdown_ul .dropdown__link {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+.nav .dropdown__container .dropdown_ul .dropdown__link:hover {
+  color: var(--title-color);
+}
+
+.dropdown__list:hover > .dropdown__container {
+  top: 5.5rem;
+  opacity: 1;
+  pointer-events: initial;
+  cursor: initial;
+}
+
+.d-none {
+  display: none;
+}
+
+@media screen and (max-width: 1118px) {
+  .nav {
+    display: block;
+  }
+  .nav__menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 1118px) {
+  .nav__toggle {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

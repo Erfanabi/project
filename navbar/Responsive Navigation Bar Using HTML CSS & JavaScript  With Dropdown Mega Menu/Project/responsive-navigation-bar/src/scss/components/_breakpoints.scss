@@ -1,0 +1,27 @@
+// کمتر از 1118 px
+@media screen and (max-width: 1118px) {
+    .nav {
+
+        display: block;
+
+
+        &__menu {
+            display: none;
+        }
+    }
+}
+
+
+
+
+// بیشتر از 1118 px
+@media screen and (min-width: 1118px) {
+
+    .nav {
+
+
+        &__toggle {
+            display: none;
+        }
+    }
+}
